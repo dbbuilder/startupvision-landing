@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Award, Globe, Briefcase } from "lucide-react";
+import { Users, Award, Globe, Briefcase, MapPin } from "lucide-react";
 
 const stats = [
   {
@@ -15,9 +15,9 @@ const stats = [
     label: "Engineers & Designers",
   },
   {
-    icon: Globe,
-    value: "Worldwide",
-    label: "Deployment Experience",
+    icon: MapPin,
+    value: "100% US",
+    label: "Native English Speakers",
   },
   {
     icon: Briefcase,
@@ -78,6 +78,13 @@ export function About() {
                 </span>
                 . Whether you need WCAG, SOC2, GDPR, or HIPAA compliance, we bake
                 it in from day one—not as an afterthought.
+              </p>
+              <p>
+                And communication is never a barrier—our entire team consists of{" "}
+                <span className="font-semibold text-zinc-900 dark:text-white">
+                  US-based native English speakers
+                </span>
+                . Clear, direct communication on every call and in every deliverable.
               </p>
             </div>
           </motion.div>
