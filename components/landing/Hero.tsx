@@ -110,15 +110,21 @@ export function Hero() {
           <p className="text-sm text-zinc-500 dark:text-zinc-500 mb-4">
             Trusted by startups and enterprises alike
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-            {/* Placeholder logos - replace with actual client logos */}
-            {["Client 1", "Client 2", "Client 3", "Client 4"].map((client) => (
-              <div
-                key={client}
-                className="text-zinc-400 dark:text-zinc-600 font-semibold"
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {[
+              { name: "Remote2Me", url: "https://remote2me.com" },
+              { name: "Fireproof", url: "https://fireproofapp.com" },
+              { name: "AnalyzeMyCloud", url: "https://analyzemycloud.com" },
+            ].map((client) => (
+              <a
+                key={client.name}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 font-semibold text-lg transition-colors"
               >
-                {client}
-              </div>
+                {client.name}
+              </a>
             ))}
           </div>
         </motion.div>
