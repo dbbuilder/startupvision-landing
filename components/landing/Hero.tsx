@@ -115,6 +115,7 @@ export function Hero() {
               { name: "Remote2Me", url: "https://remote2me.com" },
               { name: "Fireproof", url: "https://fireproofapp.com" },
               { name: "AnalyzeMyCloud", url: "https://analyzemycloud.com" },
+              { name: "Code Review", url: "https://codereview.startupvision.net" },
             ].map((client) => (
               <a
                 key={client.name}
