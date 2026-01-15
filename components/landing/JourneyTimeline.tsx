@@ -2,9 +2,18 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lightbulb, Rocket, Smartphone, Shield, Building2 } from "lucide-react";
+import {
+  Lightbulb,
+  Rocket,
+  Smartphone,
+  Shield,
+  Building2,
+  Code,
+  ArrowRight,
+  ChevronRight,
+} from "lucide-react";
 
-const phases = [
+const primaryPhases = [
   {
     id: "prototype",
     title: "Prototype",
@@ -56,6 +65,26 @@ const phases = [
     ],
     priceRange: "Starting at $35,000",
   },
+];
+
+const secondaryServices = [
+  {
+    id: "code-review",
+    title: "Code Review",
+    timeline: "1-2 Weeks",
+    icon: Code,
+    color: "from-sky-500 to-blue-600",
+    bgColor: "bg-sky-500/10",
+    borderColor: "border-sky-500/30",
+    description: "Expert review of your existing codebase with actionable recommendations",
+    features: [
+      "Architecture assessment",
+      "Security vulnerability scan",
+      "Performance optimization tips",
+      "Best practices report",
+    ],
+    priceRange: "Starting at $2,500",
+  },
   {
     id: "compliance",
     title: "Compliance",
@@ -103,21 +132,19 @@ export function JourneyTimeline() {
             The StartupVision Journey
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            From initial idea to enterprise scale. Start at any point in the
+            From initial idea to production app. Start at any point in the
             journey.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-emerald-500 to-rose-500 transform -translate-y-1/2 rounded-full opacity-30" />
-
-          {/* Phase Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4">
-            {phases.map((phase, index) => {
+        {/* Primary Journey Flow */}
+        <div className="relative mb-12">
+          {/* Primary Phase Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {primaryPhases.map((phase, index) => {
               const Icon = phase.icon;
               const isActive = activePhase === phase.id;
+              const isLast = index === primaryPhases.length - 1;
 
               return (
                 <motion.div
@@ -128,11 +155,18 @@ export function JourneyTimeline() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
+                  {/* Arrow between cards (desktop only) */}
+                  {!isLast && (
+                    <div className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10">
+                      <ChevronRight className="w-8 h-8 text-zinc-300 dark:text-zinc-600" />
+                    </div>
+                  )}
+
                   <motion.button
                     onClick={() =>
                       setActivePhase(isActive ? null : phase.id)
                     }
-                    className={`w-full p-6 rounded-2xl border-2 transition-all duration-300 text-left ${
+                    className={`w-full h-full min-h-[280px] p-6 rounded-2xl border-2 transition-all duration-300 text-left flex flex-col ${
                       isActive
                         ? `${phase.bgColor} ${phase.borderColor}`
                         : "bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600"
@@ -154,8 +188,13 @@ export function JourneyTimeline() {
                     <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-2">
                       {phase.timeline}
                     </p>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 flex-grow">
                       {phase.description}
+                    </p>
+
+                    {/* Price */}
+                    <p className="mt-4 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                      {phase.priceRange}
                     </p>
                   </motion.button>
 
@@ -185,9 +224,100 @@ export function JourneyTimeline() {
                               </li>
                             ))}
                           </ul>
-                          <p className="mt-4 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
-                            {phase.priceRange}
-                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Secondary Services - Horizontal Cards */}
+        <div className="mt-8">
+          <p className="text-center text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-6">
+            Additional Services
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {secondaryServices.map((service, index) => {
+              const Icon = service.icon;
+              const isActive = activePhase === service.id;
+
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                >
+                  <motion.button
+                    onClick={() =>
+                      setActivePhase(isActive ? null : service.id)
+                    }
+                    className={`w-full p-5 rounded-xl border-2 transition-all duration-300 text-left ${
+                      isActive
+                        ? `${service.bgColor} ${service.borderColor}`
+                        : "bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600"
+                    }`}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    <div className="flex items-start gap-4">
+                      {/* Icon */}
+                      <div
+                        className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0`}
+                      >
+                        <Icon className="w-5 h-5 text-white" />
+                      </div>
+
+                      <div className="flex-grow min-w-0">
+                        {/* Title & Timeline */}
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+                            {service.title}
+                          </h3>
+                          <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                            {service.timeline}
+                          </span>
+                        </div>
+                        <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2">
+                          {service.description}
+                        </p>
+                        <p className="mt-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                          {service.priceRange}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.button>
+
+                  {/* Expanded Details */}
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div
+                          className={`mt-2 p-4 rounded-xl ${service.bgColor} border ${service.borderColor}`}
+                        >
+                          <ul className="space-y-2">
+                            {service.features.map((feature, i) => (
+                              <li
+                                key={i}
+                                className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300"
+                              >
+                                <div
+                                  className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${service.color}`}
+                                />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </motion.div>
                     )}
