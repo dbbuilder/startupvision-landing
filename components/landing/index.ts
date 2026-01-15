@@ -3,6 +3,7 @@ export { JourneyTimeline } from "./JourneyTimeline";
 export { EntryPoints } from "./EntryPoints";
 export { HumanPlusAI } from "./HumanPlusAI";
 export { ServicesGrid } from "./ServicesGrid";
+export { About } from "./About";
 export { ContactForm } from "./ContactForm";
 export { Navbar } from "./Navbar";
 export { Footer } from "./Footer";

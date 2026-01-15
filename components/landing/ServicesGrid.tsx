@@ -7,6 +7,7 @@ import {
   Smartphone,
   Shield,
   Building2,
+  Code,
   Clock,
   DollarSign,
   ArrowRight,
@@ -63,6 +64,23 @@ const services = [
       "App Store submission",
       "Push notifications",
       "Offline support",
+    ],
+  },
+  {
+    id: "code-review",
+    icon: Code,
+    title: "Code Review",
+    tagline: "Expert eyes",
+    description:
+      "Get your existing codebase reviewed by senior engineers. Actionable recommendations for security, performance, and maintainability.",
+    timeline: "1-2 Weeks",
+    price: "Starting at $2,500",
+    color: "from-sky-500 to-blue-600",
+    features: [
+      "Architecture assessment",
+      "Security vulnerability scan",
+      "Performance optimization",
+      "Best practices report",
     ],
   },
   {
