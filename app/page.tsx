@@ -1,23 +1,17 @@
-import { BentoHero } from "@/components/landing/BentoHero";
-import { JourneyTimeline } from "@/components/landing/JourneyTimeline";
-import { EntryPoints } from "@/components/landing/EntryPoints";
-import { HumanPlusAI } from "@/components/landing/HumanPlusAI";
-import { BentoAbout } from "@/components/landing/BentoAbout";
-import { BentoServices } from "@/components/landing/BentoServices";
-import { ContactForm } from "@/components/landing/ContactForm";
+import { ConsultingHero } from "@/components/landing/ConsultingHero";
+import { ConsultingServices } from "@/components/landing/ConsultingServices";
+import { FractionalCXO } from "@/components/landing/FractionalCXO";
+import { ConsultingAbout } from "@/components/landing/ConsultingAbout";
+import { ConsultingContact } from "@/components/landing/ConsultingContact";
 
 export default function Home() {
   return (
     <>
-      <BentoHero />
-      <div id="journey">
-        <JourneyTimeline />
-      </div>
-      <EntryPoints />
-      <HumanPlusAI />
-      <BentoAbout />
-      <BentoServices />
-      <ContactForm />
+      <ConsultingHero />
+      <ConsultingServices />
+      <FractionalCXO />
+      <ConsultingAbout />
+      <ConsultingContact />
     </>
   );
 }

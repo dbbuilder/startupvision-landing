@@ -7,8 +7,8 @@ import { Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Journey", href: "#journey" },
   { label: "Services", href: "#services" },
+  { label: "Leadership", href: "#leadership" },
   { label: "About", href: "#about" },
 ];
 
