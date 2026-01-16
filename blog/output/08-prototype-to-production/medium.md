@@ -2,7 +2,7 @@
 
 ## The 10x complexity increase nobody talks about—and how to navigate it.
 
-[Image: Bridge crossing a chasm, representing the gap between prototype and production]
+![Hero Image: Orange to red gradient (orange-500 to red-700) with waves pattern overlay. Dimensions: 1200x630px. Alt text: Prototype to production transition guide showing the 10x complexity increase](hero-image-placeholder.png)
 
 Your prototype works. Users love the demo. Investors are impressed. The product vision is validated.
 
@@ -18,7 +18,32 @@ The transition from prototype to production is where most products either mature
 
 A prototype needs to work when you're watching. A production system needs to work at 3 AM when nobody's watching and a user in Singapore is having the worst day of their life.
 
-[Image: 24/7 monitoring dashboard showing system health]
+What changes from prototype to production:
+
+```mermaid
+graph TB
+    subgraph Prototype["Prototype Requirements"]
+        P1[Works when watched]
+        P2[Single user]
+        P3[Your data]
+        P4[Your computer]
+        P5[You remember]
+    end
+
+    subgraph Production["Production Requirements"]
+        R1[Works 24/7/365]
+        R2[Many concurrent users]
+        R3[Their data - protected]
+        R4[The cloud - reliable]
+        R5[Documentation]
+    end
+
+    P1 --> |"Transform"| R1
+    P2 --> R2
+    P3 --> R3
+    P4 --> R4
+    P5 --> R5
+```
 
 **What this requires:**
 - Error handling for every conceivable failure
@@ -67,7 +92,43 @@ Prototype data is fake. Production data is real—often sensitive, always valuab
 
 Prototypes run locally or on simple hosting. Production runs on infrastructure that needs to be reliable, scalable, and maintainable.
 
-[Image: Cloud infrastructure diagram with multiple availability zones]
+Production infrastructure requirements:
+
+```mermaid
+graph LR
+    subgraph Infrastructure["Production Infrastructure"]
+        I1[Infrastructure as Code]
+        I2[CI/CD Pipelines]
+        I3[Environment Parity]
+        I4[Secrets Management]
+        I5[Monitoring]
+        I6[Disaster Recovery]
+    end
+```
+
+The complexity multiplier:
+
+```mermaid
+graph TD
+    A[Single Feature] --> B[Feature itself]
+    A --> C[Error handling]
+    A --> D[Testing]
+    A --> E[Monitoring]
+    A --> F[Documentation]
+    A --> G[Security]
+    A --> H[Scale]
+    A --> I[Operations]
+
+    B --> J["1 day prototype"]
+    C --> K["+ 1 day"]
+    D --> K
+    E --> K
+    F --> K
+    G --> K
+    H --> K
+    I --> K
+    K --> L["= 1 week production"]
+```
 
 **What this requires:**
 - Infrastructure as code
@@ -115,7 +176,59 @@ Each dimension multiplies the work. A feature that took a day to prototype takes
 
 ## The Common Mistakes
 
-[Image: Warning signs with common pitfalls listed]
+Common prototype-to-production mistakes:
+
+```mermaid
+graph TD
+    A[Common Mistakes] --> B[Expecting to 'clean up' prototype]
+    A --> C[Underestimating infrastructure]
+    A --> D[Skipping 'boring' work]
+    A --> E[Moving too fast]
+    A --> F[Going alone]
+
+    B --> G[Accept it's a rewrite]
+    C --> H[Plan before you need it]
+    D --> I[Include in scope from start]
+    E --> J[Adjust velocity expectations]
+    F --> K[Recognize when you need expertise]
+```
+
+The production checklist:
+
+```mermaid
+graph TB
+    subgraph Security["Security"]
+        S1[Authentication tested]
+        S2[Authorization enforced]
+        S3[Input validation]
+        S4[Secrets in secure storage]
+        S5[Dependencies audited]
+        S6[HTTPS everywhere]
+    end
+
+    subgraph Reliability["Reliability"]
+        R1[Error handling complete]
+        R2[Graceful degradation]
+        R3[Timeouts configured]
+        R4[Connection pooling]
+        R5[Load testing done]
+    end
+
+    subgraph Observability["Observability"]
+        O1[Logging aggregated]
+        O2[Metrics dashboarded]
+        O3[Alerting configured]
+        O4[Error tracking enabled]
+    end
+
+    subgraph Operations["Operations"]
+        P1[CI/CD operational]
+        P2[Rollback tested]
+        P3[Backup/recovery tested]
+        P4[Runbooks written]
+        P5[On-call defined]
+    end
+```
 
 ### Mistake 1: Expecting to "Clean Up" the Prototype
 

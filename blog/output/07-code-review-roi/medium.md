@@ -2,7 +2,7 @@
 
 ## Why external code review pays for itself—and the hidden costs of skipping it.
 
-[Image: Magnifying glass examining code on screen, representing thorough code review]
+![Hero Image: Rose to pink gradient (rose-500 to pink-600) with dots pattern overlay. Dimensions: 1200x630px. Alt text: Expert code review ROI analysis showing hidden costs and value of external review](hero-image-placeholder.png)
 
 Your codebase is an asset. It's also a liability.
 
@@ -14,7 +14,26 @@ External code review isn't about catching bugs—your tests should do that. It's
 
 ## The Hidden Costs of Code Quality Debt
 
-[Image: Iceberg diagram showing visible bugs above water and hidden costs below]
+The hidden costs of code quality debt:
+
+```mermaid
+graph TD
+    subgraph Visible["Visible Issues"]
+        V1[Bugs in production]
+        V2[Feature delays]
+    end
+
+    subgraph Hidden["Hidden Costs"]
+        H1[Developer velocity decay]
+        H2[The rewrite tax]
+        H3[Security incidents]
+        H4[Scaling surprises]
+        H5[Knowledge concentration]
+    end
+
+    Visible --> |"What you see"| Surface[Surface Level]
+    Hidden --> |"What's underneath"| Deep[90% of the iceberg]
+```
 
 ### Cost 1: Developer Velocity Decay
 
@@ -50,7 +69,22 @@ Good code can be understood by someone who didn't write it. That's the test.
 
 ## What Expert Code Review Actually Provides
 
-[Image: Checklist of code review deliverables]
+What expert code review provides:
+
+```mermaid
+graph TB
+    A[Expert Code Review] --> B[Architecture Assessment]
+    A --> C[Security Review]
+    A --> D[Performance Analysis]
+    A --> E[Best Practice Alignment]
+    A --> F[Technical Debt Inventory]
+
+    B --> G[Maintainable? Scalable?]
+    C --> H[Systemic weaknesses?]
+    D --> I[Bottlenecks? Optimizations?]
+    E --> J[Patterns? Anti-patterns?]
+    F --> K[What needs attention?]
+```
 
 ### Architecture Assessment
 
@@ -110,7 +144,50 @@ Even well-run teams benefit from external perspective annually. Internal reviews
 
 ## The Review Process
 
-[Image: Flowchart of code review process steps]
+When code review makes sense:
+
+```mermaid
+flowchart TB
+    A[When to Get Code Review] --> B[Before raising a round]
+    A --> C[Before scaling]
+    A --> D[When inheriting code]
+    A --> E[When something feels wrong]
+    A --> F[Periodically - annually]
+
+    B --> G[Know what diligence will find]
+    C --> H[Confirm foundation supports growth]
+    D --> I[Understand what you're getting]
+    E --> J[Diagnose the issues]
+    F --> K[Catch blind spots]
+```
+
+The review process:
+
+```mermaid
+flowchart LR
+    A[1. Scope Definition] --> B[2. Codebase Access]
+    B --> C[3. Review Execution]
+    C --> D[4. Documentation]
+    D --> E[5. Discussion]
+    E --> F[6. Remediation Support]
+```
+
+Measuring ROI:
+
+```mermaid
+graph LR
+    A[Review Investment] --> B["1-2 weeks senior time"]
+
+    subgraph Returns["Potential Returns"]
+        R1["Avoided $500K rewrite"]
+        R2["Prevented security breach"]
+        R3["Avoided scaling failure"]
+        R4["Faster onboarding"]
+        R5["2 hrs/week/engineer saved"]
+    end
+
+    B --> Returns
+```
 
 1. **Scope Definition** — What systems are in scope? What questions need answering?
 

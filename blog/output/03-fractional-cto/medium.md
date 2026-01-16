@@ -2,7 +2,7 @@
 
 ## The inflection points that signal it's time for technical leadership—and why fractional often makes more sense than full-time.
 
-[Image: Executive in strategic meeting with startup team, discussing technical architecture on whiteboard]
+![Hero Image: Teal to cyan gradient (teal-600 to cyan-800) with dots pattern overlay. Dimensions: 1200x630px. Alt text: Fractional CTO leadership providing strategic technical guidance to startup teams](hero-image-placeholder.png)
 
 You started without a CTO. Many successful companies do. But at some point, the technical decisions you're making—or avoiding—start to compound. And the absence of experienced technical leadership becomes the constraint.
 
@@ -38,7 +38,20 @@ Without technical leadership, these conversations stall or fail.
 
 Smart investors do technical due diligence. They want to know your architecture scales, your code is maintainable, and your team can execute. Without a CTO to answer these questions credibly, you're at a disadvantage.
 
-[Image: Graph showing cost of technical decisions over time - early cheap, later expensive]
+```mermaid
+graph TD
+    A[Warning Signs] --> B[Technical decisions feel like guesses]
+    A --> C[Development is slow with unclear cause]
+    A --> D[Can't evaluate vendors or candidates]
+    A --> E[Security concerns keeping you up]
+    A --> F[Investors asking technical questions]
+
+    B --> G[You Need Technical Leadership]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+```
 
 ---
 
@@ -66,7 +79,69 @@ A fractional CTO gives you:
 
 This isn't about writing code. It's about the decisions that shape everything else:
 
-[Image: Mind map of Fractional CTO responsibilities: Strategy, Architecture, Team, Vendors, Risk, Hiring, Credibility]
+```mermaid
+flowchart TB
+    subgraph Strategy["Strategic Leadership"]
+        S1[Technical vision]
+        S2[Architecture decisions]
+        S3[Build vs buy choices]
+        S4[Technology roadmap]
+    end
+
+    subgraph People["Team Leadership"]
+        P1[Hiring strategy]
+        P2[Team structure]
+        P3[Performance management]
+        P4[Mentorship]
+    end
+
+    subgraph Execution["Execution Oversight"]
+        E1[Code quality]
+        E2[Security posture]
+        E3[Development process]
+        E4[Vendor management]
+    end
+
+    subgraph External["External Representation"]
+        X1[Board/Investor updates]
+        X2[Customer technical calls]
+        X3[Due diligence support]
+        X4[Partnership evaluation]
+    end
+```
+
+Fractional vs. Full-Time comparison:
+
+```mermaid
+graph LR
+    subgraph FullTime["Full-Time CTO"]
+        F1["$250-400K+ total comp"]
+        F2["40-50+ hrs/week"]
+        F3["3-6 month search"]
+        F4["Equity expectations"]
+    end
+
+    subgraph Fractional["Fractional CTO"]
+        R1["$5-15K/month"]
+        R2["10-20 hrs/week"]
+        R3["Start immediately"]
+        R4["Flexible terms"]
+    end
+```
+
+Communication rhythm for fractional engagement:
+
+```mermaid
+graph TB
+    A[Weekly] --> B[30-60 min sync call]
+    A --> C[Async Slack/email]
+
+    D[Monthly] --> E[Strategy review]
+    D --> F[Roadmap update]
+
+    G[Quarterly] --> H[OKR assessment]
+    G --> I[Team evaluation]
+```
 
 **Technical strategy.** Which technologies, architectures, and approaches align with your business goals? What should you build versus buy? Where should you invest versus cut corners?
 

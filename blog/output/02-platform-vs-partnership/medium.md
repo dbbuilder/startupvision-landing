@@ -2,7 +2,7 @@
 
 ## How to decide between self-service AI tools with expert guidance versus a dedicated senior team building your product.
 
-[Image: Split image showing DIY tools on one side and collaborative team on the other]
+![Hero Image: Purple to indigo gradient (purple-600 to indigo-800) with grid pattern overlay. Dimensions: 1200x630px. Alt text: Platform vs partnership decision framework for startup technology development](hero-image-placeholder.png)
 
 "Should we use a platform or hire a team?"
 
@@ -26,7 +26,44 @@ Let's define the options clearly:
 
 ## The Decision Framework
 
-[Image: Decision tree flowchart for Platform vs Partnership choice]
+```mermaid
+flowchart TB
+    subgraph Platform["Platform Path"]
+        P1[Self-service tools]
+        P2[AI-generated code]
+        P3[Template-based]
+        P4[You manage everything]
+    end
+
+    subgraph Partnership["Partnership Path"]
+        R1[Expert team]
+        R2[Custom architecture]
+        R3[Production-ready]
+        R4[Ongoing support]
+    end
+
+    Start((Your Idea)) --> Decision{Stage & Needs?}
+    Decision -->|Validation| Platform
+    Decision -->|Production| Partnership
+    Platform -->|Ready to scale| Partnership
+```
+
+When to use platforms:
+
+```mermaid
+graph TD
+    A[Use Platforms When...] --> B[Testing market fit]
+    A --> C[Validating assumptions]
+    A --> D[Building demos]
+    A --> E[Internal tools]
+    A --> F[Simple workflows]
+
+    B --> G[Low risk if wrong]
+    C --> G
+    D --> G
+    E --> H[Limited users]
+    F --> H
+```
 
 ### Choose Platform When:
 
@@ -72,7 +109,60 @@ The key is matching your model to your stage, not committing to one approach per
 
 ## Common Mistakes
 
-[Image: Warning sign with common pitfalls listed]
+When to use partnership:
+
+```mermaid
+graph TD
+    A[Use Partnership When...] --> B[Handling sensitive data]
+    A --> C[Scaling for growth]
+    A --> D[Complex integrations]
+    A --> E[Enterprise customers]
+    A --> F[Regulatory compliance]
+
+    B --> G[Security matters]
+    C --> G
+    D --> H[Expertise required]
+    E --> H
+    F --> I[Compliance required]
+```
+
+The hybrid approach combines both:
+
+```mermaid
+flowchart LR
+    A[Idea] --> B[Platform Prototype]
+    B --> C{Validated?}
+    C -->|No| D[Iterate/Pivot]
+    D --> B
+    C -->|Yes| E[Partner for Production]
+    E --> F[Production Launch]
+    F --> G[Scale & Evolve]
+
+    style B fill:#dbeafe
+    style E fill:#dcfce7
+    style F fill:#dcfce7
+```
+
+The real cost comparison:
+
+```mermaid
+graph TB
+    subgraph Platform["Platform Total Cost"]
+        P1[Tool subscription: $$$]
+        P2[Your time: $$$$]
+        P3[Rework for production: $$$$$]
+        P4[Security retrofit: $$$$]
+        P5[Scale problems: $$$]
+    end
+
+    subgraph Partner["Partnership Total Cost"]
+        R1[Development: $$$$]
+        R2[Built for production: included]
+        R3[Security included: included]
+        R4[Scale architecture: included]
+        R5[Ongoing support: $$]
+    end
+```
 
 **Mistake 1: Choosing platform to save money, then spending 10x fixing quality issues.**
 The lowest-cost development option isn't always the cheapest outcome. If your platform-built product needs professional rebuilding before it can scale, you've paid twice.

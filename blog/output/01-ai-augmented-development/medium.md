@@ -2,7 +2,7 @@
 
 ## How senior engineers use AI to deliver faster without sacrificing quality—and why "AI-powered" development alone isn't enough.
 
-[Image: A senior engineer working alongside AI coding assistant, collaborative workspace showing code on multiple screens]
+![Hero Image: Blue to indigo gradient (blue-600 to indigo-800) with circuit pattern overlay. Dimensions: 1200x630px. Alt text: AI-augmented development workflow showing human engineers directing AI tools for optimal software development results](hero-image-placeholder.png)
 
 Every week, another startup announces they're using AI to build software "10x faster." And every month, we see the aftermath: codebases that nobody can maintain, security vulnerabilities that slipped through, and products that technically work but fail in production.
 
@@ -34,7 +34,52 @@ But here's what they can't do:
 
 Our approach is different. We call it AI-augmented development: human-led teams using AI as a force multiplier, not a replacement.
 
-[Image: Diagram showing workflow - Senior Engineers → Decisions → AI Tools → Implementation → Human Review → Production]
+```mermaid
+flowchart LR
+    subgraph AI["AI Capabilities"]
+        A1[Generate boilerplate]
+        A2[Suggest completions]
+        A3[Pattern matching]
+        A4[Code transformation]
+    end
+
+    subgraph Human["Human Judgment"]
+        H1[Architecture decisions]
+        H2[Business logic]
+        H3[Security review]
+        H4[User experience]
+    end
+
+    AI --> |"Accelerates"| Human
+    Human --> |"Directs"| AI
+```
+
+The partnership model works in three phases:
+
+```mermaid
+flowchart TB
+    subgraph Phase1["1. Strategy & Architecture"]
+        S1[Human defines requirements]
+        S2[Human designs architecture]
+        S3[Human identifies patterns]
+    end
+
+    subgraph Phase2["2. Accelerated Development"]
+        D1[AI generates scaffolding]
+        D2[Human reviews & refines]
+        D3[AI assists with tests]
+        D4[Human validates logic]
+    end
+
+    subgraph Phase3["3. Quality & Security"]
+        Q1[Human security review]
+        Q2[Human UX validation]
+        Q3[Human production decisions]
+    end
+
+    Phase1 --> Phase2
+    Phase2 --> Phase3
+```
 
 Here's how it works in practice:
 
@@ -90,7 +135,42 @@ We've taken products from concept to launch in 6-8 weeks. Not by cutting corners
 
 ## When AI-Only Approaches Fail
 
-[Image: Graph showing prototype success vs production failure rates for AI-only vs AI-augmented approaches]
+```mermaid
+graph TD
+    A[AI-Generated Code] --> B{Human Review?}
+    B -->|Thorough| C[Quality Code]
+    B -->|Cursory| D[Tech Debt Accumulates]
+    D --> E[Harder to Modify]
+    D --> F[Harder to Debug]
+    D --> G[Harder to Scale]
+    E --> H[Expensive Rewrite]
+    F --> H
+    G --> H
+```
+
+The results of human-directed, AI-accelerated development:
+
+```mermaid
+graph LR
+    subgraph Outcomes["Human + AI Outcomes"]
+        O1["40-60% faster development"]
+        O2["Production-grade security"]
+        O3["Maintainable codebase"]
+        O4["Scalable architecture"]
+    end
+
+    subgraph Methods["How We Achieve It"]
+        M1[AI for repetitive tasks]
+        M2[Human for decisions]
+        M3[Human for security]
+        M4[Human for architecture]
+    end
+
+    M1 --> O1
+    M2 --> O3
+    M3 --> O2
+    M4 --> O4
+```
 
 We regularly work with founders who come to us after trying AI-first development platforms. The pattern is consistent:
 

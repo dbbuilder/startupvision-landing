@@ -2,7 +2,7 @@
 
 ## The boring, correct choices versus the exciting, risky ones—and how to tell the difference.
 
-[Image: Developer contemplating technology choices, with icons of various frameworks floating around]
+![Hero Image: Indigo to violet gradient (indigo-600 to violet-800) with grid pattern overlay. Dimensions: 1200x630px. Alt text: Tech stack selection guide for startups in 2026 focusing on proven, boring technology choices](hero-image-placeholder.png)
 
 Your tech stack will outlive your initial assumptions. The choices you make today will still be running when you have 10x the users, 5x the features, and completely different priorities.
 
@@ -29,7 +29,58 @@ Most startups don't meet these criteria. Most startups should be boring.
 
 ## The 2026 Boring Stack
 
-[Image: Tech stack diagram showing recommended technologies in layers]
+Boring vs exciting stack comparison:
+
+```mermaid
+graph LR
+    A[Boring Stack] --> B[Comprehensive docs]
+    A --> C[Easy hiring]
+    A --> D[Edge cases solved]
+    A --> E[Community support]
+
+    F[Exciting Stack] --> G[Sparse docs]
+    F --> H[Hard hiring]
+    F --> I[Edge cases unknown]
+    F --> J[Small community]
+```
+
+The 2026 boring stack:
+
+```mermaid
+graph TB
+    subgraph Frontend["Frontend"]
+        F1[React / Next.js]
+        F2[TypeScript]
+        F3[Tailwind CSS]
+    end
+
+    subgraph Backend["Backend"]
+        B1[Node.js + TypeScript]
+        B2[Python + FastAPI]
+        B3[Go]
+    end
+
+    subgraph Database["Database"]
+        D1[PostgreSQL]
+    end
+
+    subgraph Infrastructure["Infrastructure"]
+        I1[AWS / GCP / Vercel]
+        I2[Docker]
+        I3[GitHub Actions]
+    end
+
+    subgraph Services["Managed Services"]
+        S1[Auth0 / Clerk]
+        S2[Stripe]
+        S3[Resend / SendGrid]
+    end
+
+    Frontend --> Backend
+    Backend --> Database
+    Backend --> Services
+    Infrastructure --> Backend
+```
 
 ### Frontend: React or Next.js
 
@@ -104,7 +155,41 @@ Stripe is the default for a reason. It handles complexity you don't want to buil
 
 ## Decisions That Actually Matter
 
-[Image: Architecture decision points highlighted]
+Key architecture decisions:
+
+```mermaid
+graph TD
+    A[Key Decisions] --> B[Monolith vs Microservices]
+    A --> C[Data Residency]
+    A --> D[API Design]
+
+    B --> E[Start Monolith]
+    C --> F[Plan for Compliance]
+    D --> G[REST for Most]
+```
+
+The tech stack process:
+
+```mermaid
+flowchart TB
+    A[1. List Requirements] --> B[2. Consider Your Team]
+    B --> C[3. Default to Boring]
+    C --> D[4. Document Decisions]
+    D --> E[5. Commit and Stop Debating]
+```
+
+What not to optimize for:
+
+```mermaid
+graph TD
+    A[Don't Optimize For] --> B[Hypothetical scale]
+    A --> C[Resume appeal]
+    A --> D[Perfection]
+
+    B --> E["Build for 10x, not 1000x"]
+    C --> F["Cool tech you don't know slows you down"]
+    D --> G["Make recoverable mistakes"]
+```
 
 While tech stack gets attention, these decisions often matter more:
 

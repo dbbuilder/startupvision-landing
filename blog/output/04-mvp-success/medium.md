@@ -2,7 +2,7 @@
 
 ## Beyond "ship fast"—what separates the MVPs that become companies from the ones that become lessons.
 
-[Image: Rocket launching from laptop, representing successful MVP launch]
+![Hero Image: Emerald to teal gradient (emerald-600 to teal-700) with waves pattern overlay. Dimensions: 1200x630px. Alt text: Five key success factors for minimum viable product development](hero-image-placeholder.png)
 
 "Just ship it."
 
@@ -20,7 +20,20 @@ This sounds obvious, but it's where most MVPs fail—before writing a line of co
 
 A successful MVP doesn't just test whether you can build something. It tests whether the problem exists, whether your solution addresses it, and whether people value it enough to pay.
 
-[Image: Customer interview in progress, founder taking notes]
+```mermaid
+graph TD
+    A[MVP Success Factors] --> B[1. Problem is real]
+    A --> C[2. Scope is ruthless]
+    A --> D[3. Foundation allows iteration]
+    A --> E[4. Feedback loops exist]
+    A --> F[5. Team can execute post-launch]
+
+    B --> G[Users will pay]
+    C --> H[Tests one hypothesis]
+    D --> I[Can adapt and change]
+    E --> J[Learn from usage]
+    F --> K[Iterate quickly]
+```
 
 **How to test this before building:**
 
@@ -64,7 +77,55 @@ This doesn't mean building for scale you don't have. It means:
 
 **Security that's actually secure.** Data breaches don't wait for your Series A. Auth, encryption, and access control aren't optional.
 
-[Image: Clean code architecture diagram]
+MVP scope bloat vs actual need:
+
+```mermaid
+graph LR
+    A[Typical MVP Bloat] --> B[User management system]
+    A --> C[Sophisticated dashboards]
+    A --> D[Mobile AND web apps]
+    A --> E[Social features]
+    A --> F[Analytics platform]
+
+    G[Actual MVP Need] --> H[One core hypothesis]
+    G --> I[Minimum test surface]
+    G --> J[Everything else is v2]
+```
+
+Good vs bad MVP foundation:
+
+```mermaid
+graph TB
+    subgraph Good["Good MVP Foundation"]
+        G1[Architecture allows change]
+        G2[Code is understandable]
+        G3[Security is built in]
+        G4[Can add features without rewrite]
+    end
+
+    subgraph Bad["Bad MVP Foundation"]
+        B1[Spaghetti architecture]
+        B2[Only creator understands]
+        B3[Security retrofit needed]
+        B4[Every change breaks things]
+    end
+
+    Good --> S[Can iterate for months]
+    Bad --> F[Needs rewrite in weeks]
+```
+
+The feedback loop:
+
+```mermaid
+flowchart LR
+    A[Launch] --> B[Users Interact]
+    B --> C[Analytics Capture]
+    C --> D[Patterns Emerge]
+    D --> E[Insights Generated]
+    E --> F[Iteration Planned]
+    F --> G[Changes Deployed]
+    G --> B
+```
 
 ---
 
@@ -99,7 +160,32 @@ The MVP is just the beginning. What happens in weeks 4-12 often determines succe
 
 ## What Doesn't Determine Success
 
-[Image: Crossed out list of "sophistication", "polish", "feature count"]
+What doesn't matter for MVP success:
+
+```mermaid
+graph TD
+    A[Doesn't Matter] --> B[Technology sophistication]
+    A --> C[Visual polish]
+    A --> D[Feature count]
+    A --> E[Time spent building]
+
+    B --> F[Simple > Complex]
+    C --> G[Works > Pretty]
+    D --> H[Less > More]
+    E --> I[Learning > Effort]
+```
+
+The MVP framework:
+
+```mermaid
+flowchart TB
+    A[1. Validate Problem] --> B[2. Define Hypothesis]
+    B --> C[3. Design Minimal Test]
+    C --> D[4. Build with Iteration in Mind]
+    D --> E[5. Launch with Feedback Loops]
+    E --> F[6. Iterate Based on Evidence]
+    F --> |Learn more| B
+```
 
 **Sophistication of the technology.** Simple technology that solves the problem beats complex technology that impresses engineers.
 

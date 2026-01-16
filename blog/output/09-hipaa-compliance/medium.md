@@ -2,7 +2,7 @@
 
 ## Why building compliant from day one beats the expensive retrofit—and how to do it right.
 
-[Image: Medical technology interface with lock icon, representing secure health data]
+![Hero Image: Cyan to emerald gradient (cyan-500 to emerald-700) with circuit pattern overlay. Dimensions: 1200x630px. Alt text: HIPAA compliance guide for health tech startups covering PHI protection and regulations](hero-image-placeholder.png)
 
 You're building health tech. That means you're building on HIPAA ground.
 
@@ -14,7 +14,44 @@ But here's what most founders don't realize: building HIPAA-compliant from the s
 
 ## Does HIPAA Apply to You?
 
-[Image: Flowchart showing HIPAA applicability decision tree]
+Does HIPAA apply to you?
+
+```mermaid
+flowchart TD
+    A[Does HIPAA Apply?] --> B{Handle PHI for Covered Entity?}
+    B -->|Yes| C[HIPAA Applies]
+    B -->|No| D{Are you a Covered Entity?}
+    D -->|Yes| C
+    D -->|No| E{Business Associate?}
+    E -->|Yes| C
+    E -->|No| F[May Not Apply]
+
+    style C fill:#fecaca
+    style F fill:#dcfce7
+```
+
+The three HIPAA rules:
+
+```mermaid
+graph TB
+    subgraph Privacy["Privacy Rule"]
+        P1[How PHI is used/disclosed]
+        P2[Patient access rights]
+        P3[Documentation requirements]
+    end
+
+    subgraph Security["Security Rule"]
+        S1[Administrative safeguards]
+        S2[Physical safeguards]
+        S3[Technical safeguards]
+    end
+
+    subgraph Breach["Breach Notification Rule"]
+        B1[Individual notification]
+        B2[HHS notification]
+        B3[Media notification]
+    end
+```
 
 **HIPAA applies if you:**
 - Handle PHI on behalf of a Covered Entity (hospitals, clinics, insurers, pharmacies)
@@ -75,7 +112,57 @@ Specifies what happens if PHI is exposed.
 
 ## The Technical Requirements
 
-[Image: Technical architecture diagram showing security controls]
+Technical requirements for HIPAA:
+
+```mermaid
+graph TB
+    subgraph Access["Access Control"]
+        A1[Unique user IDs]
+        A2[Automatic logoff]
+        A3[MFA - best practice]
+        A4[Role-based access]
+    end
+
+    subgraph Audit["Audit Controls"]
+        AU1[Record all access]
+        AU2[Tamper-proof logs]
+        AU3[Regular review]
+        AU4[Suspicious alerts]
+    end
+
+    subgraph Transmission["Transmission Security"]
+        T1[TLS 1.2+]
+        T2[E2E encryption]
+        T3[VPN for internal]
+        T4[Certificate management]
+    end
+
+    subgraph Encryption["Encryption"]
+        E1[AES-256 at rest]
+        E2[TLS in transit]
+        E3[Key management]
+        E4[Encrypted backups]
+    end
+```
+
+Services with and without BAAs:
+
+```mermaid
+graph LR
+    subgraph BAA["Services with BAAs"]
+        B1[AWS, GCP, Azure]
+        B2[MongoDB Atlas]
+        B3[Auth0, Clerk]
+        B4[SendGrid, Twilio]
+    end
+
+    subgraph NoBAA["No BAAs"]
+        N1[Most free tiers]
+        N2[Many analytics]
+        N3[Consumer email]
+        N4[Many SaaS tools]
+    end
+```
 
 ### Access Control
 
@@ -154,7 +241,51 @@ Vet every vendor before using them with PHI.
 
 ## The Compliance-First Approach
 
-[Image: Development process with compliance checkpoints integrated]
+The compliance-first approach:
+
+```mermaid
+flowchart TB
+    subgraph Day1["Build HIPAA-Compliant from Day 1"]
+        A[Infrastructure Setup] --> B[Architecture Design]
+        B --> C[Development Practices]
+        C --> D[Operational Procedures]
+    end
+
+    A --> A1[HIPAA-eligible cloud]
+    A --> A2[Encryption by default]
+    A --> A3[Sign all BAAs]
+
+    B --> B1[Minimize PHI collection]
+    B --> B2[Isolate PHI storage]
+    B --> B3[Design for audit trails]
+
+    C --> C1[Security code reviews]
+    C --> C2[Dependency scanning]
+    C --> C3[Penetration testing]
+
+    D --> D1[Incident response plan]
+    D --> D2[Risk assessments]
+    D --> D3[Employee training]
+```
+
+The retrofit nightmare:
+
+```mermaid
+graph TD
+    A[Typical Discoveries] --> B[PHI scattered across 15 systems]
+    A --> C[No audit logging]
+    A --> D[Vendors without BAAs]
+    A --> E[Missing encryption]
+    A --> F[Inadequate access controls]
+
+    B --> G["3-6 months engineering"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H["3-5x compliance-first cost"]
+```
 
 Building HIPAA-compliant from day one:
 

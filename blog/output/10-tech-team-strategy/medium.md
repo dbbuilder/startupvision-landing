@@ -2,7 +2,7 @@
 
 ## Full-time versus fractional versus agency versus hybrid—the team structures that actually work at each stage.
 
-[Image: Diverse technical team collaborating, representing different team models]
+![Hero Image: Amber to orange gradient (amber-500 to orange-600) with grid pattern overlay. Dimensions: 1200x630px. Alt text: Technical team strategy guide covering full-time, fractional, agency, and hybrid models](hero-image-placeholder.png)
 
 "Should I hire a full-time engineer or work with an agency?"
 
@@ -16,7 +16,22 @@ Here's a framework for matching your team structure to your reality.
 
 ## The Four Models
 
-[Image: Four quadrants showing different team structure models]
+The four team structure models:
+
+```mermaid
+graph TB
+    subgraph Models["Team Structure Models"]
+        M1[Full-Time Team]
+        M2[Fractional Team]
+        M3[Agency/Partner]
+        M4[Hybrid]
+    end
+
+    M1 --> S1[Deep context, slow to scale]
+    M2 --> S2[Senior expertise, divided attention]
+    M3 --> S3[Fast ramp-up, less context]
+    M4 --> S4[Optimized mix, more coordination]
+```
 
 ### Model 1: Full-Time Team
 
@@ -97,7 +112,57 @@ Combination of the above. Small full-time core, fractional leadership, agency fo
 
 ## The Stage-Appropriate Structure
 
-[Image: Growth stages with recommended team structures at each phase]
+Stage-appropriate team structures:
+
+```mermaid
+graph TB
+    subgraph PreSeed["Pre-Seed / Idea"]
+        PS[Founder-led + Agency prototype]
+        PS --> PS1[Fractional advisor optional]
+    end
+
+    subgraph Seed["Seed Stage"]
+        S[2-4 FT engineers + Fractional CTO]
+        S --> S1[Agency for specialized work]
+    end
+
+    subgraph SeriesA["Series A"]
+        A[8-15 FT engineers + Full-time CTO]
+        A --> A1[Fractional specialists]
+        A --> A2[Strategic agency relationships]
+    end
+
+    subgraph SeriesB["Series B+"]
+        B[Full internal organization]
+        B --> B1[Agency for overflow only]
+    end
+
+    PreSeed --> |"PMF signals"| Seed
+    Seed --> |"Scaling"| SeriesA
+    SeriesA --> |"At scale"| SeriesB
+```
+
+Decision factors:
+
+```mermaid
+graph TB
+    A[Decision Factors] --> B[Work Predictability]
+    A --> C[Specialization Required]
+    A --> D[Hiring Capability]
+    A --> E[Capital Efficiency]
+
+    B --> |"High"| F[Full-time makes sense]
+    B --> |"Low"| G[Flexibility valuable]
+
+    C --> |"Specialized"| H[Agency/Fractional]
+    C --> |"General"| I[Full-time often better]
+
+    D --> |"Strong"| J[Full-time accessible]
+    D --> |"Weak"| K[External bridges gap]
+
+    E --> |"Tight"| L[Optimize flexibility]
+    E --> |"Well-funded"| M[Invest in ownership]
+```
 
 ### Pre-Seed / Idea Stage
 
@@ -193,7 +258,22 @@ Full-time teams build assets that compound. With capital, the investment makes s
 
 ## Common Mistakes
 
-[Image: Warning signs with common hiring pitfalls]
+Common team structure mistakes:
+
+```mermaid
+graph TD
+    A[Common Mistakes] --> B[Hiring full-time too early]
+    A --> C[Never building full-time]
+    A --> D[Choosing agencies on price]
+    A --> E[Ignoring the transition]
+    A --> F[Underestimating management]
+
+    B --> G[Every hire is a bet before PMF]
+    C --> H[Lack institutional knowledge]
+    D --> I[Quality > hourly rate]
+    E --> J[Plan knowledge transfer]
+    F --> K[5-7 engineers need a manager]
+```
 
 ### Mistake 1: Hiring Full-Time Too Early
 

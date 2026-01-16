@@ -2,7 +2,7 @@
 
 ## What it actually takes, what it costs, and whether you need it yet.
 
-[Image: Security shield with checkmark, representing SOC 2 certification]
+![Hero Image: Slate to zinc gradient (slate-700 to zinc-900) with circuit pattern overlay. Dimensions: 1200x630px. Alt text: SOC 2 compliance guide for startups covering requirements, timeline, and costs](hero-image-placeholder.png)
 
 You're trying to close an enterprise deal. Everything's going well until procurement sends the security questionnaire. One question changes everything:
 
@@ -30,7 +30,39 @@ Most companies focus on Security, the mandatory component, and add others based 
 
 ## Do You Actually Need It?
 
-[Image: Decision flowchart for SOC 2 necessity]
+```mermaid
+graph TD
+    A[SOC 2 Trust Principles] --> B[Security]
+    A --> C[Availability]
+    A --> D[Processing Integrity]
+    A --> E[Confidentiality]
+    A --> F[Privacy]
+
+    B --> G[Required]
+    C --> H[Optional]
+    D --> H
+    E --> H
+    F --> H
+
+    style B fill:#dcfce7
+    style G fill:#dcfce7
+```
+
+Do you need SOC 2?
+
+```mermaid
+flowchart TD
+    A[Do You Need SOC 2?] --> B{Selling to Enterprise?}
+    B -->|Yes| C[Probably Yes]
+    B -->|No| D{Handling Sensitive Data?}
+    D -->|Yes| C
+    D -->|No| E{Customers Require It?}
+    E -->|Yes| C
+    E -->|No| F[Not Yet]
+
+    C --> G[Start Planning]
+    F --> H[Focus on Product]
+```
 
 **Yes, if:**
 - You're selling to enterprise customers (Fortune 500, government, regulated industries)
@@ -87,7 +119,69 @@ SOC 2 doesn't prescribe specific technologies. It defines control objectives you
 
 ### The Process
 
-[Image: Timeline showing SOC 2 process stages]
+SOC 2 control areas:
+
+```mermaid
+graph TB
+    subgraph Access["Access Control"]
+        A1[MFA required]
+        A2[Role-based permissions]
+        A3[Access reviews]
+        A4[Password policies]
+    end
+
+    subgraph Change["Change Management"]
+        C1[Version control]
+        C2[Code review]
+        C3[Separate environments]
+        C4[Release procedures]
+    end
+
+    subgraph Incident["Incident Response"]
+        I1[Response plan]
+        I2[Logging/monitoring]
+        I3[Alerting]
+        I4[Post-incident review]
+    end
+
+    subgraph Vendor["Vendor Management"]
+        V1[Security assessments]
+        V2[Contract requirements]
+        V3[Regular reviews]
+    end
+```
+
+SOC 2 timeline:
+
+```mermaid
+gantt
+    title SOC 2 Timeline
+    dateFormat  YYYY-MM
+    section Preparation
+    Gap Assessment    :a1, 2026-01, 1M
+    Remediation       :a2, after a1, 4M
+    section Audit
+    Type I Audit      :b1, after a2, 2M
+    Observation Period:b2, after b1, 9M
+    Type II Audit     :b3, after b2, 2M
+```
+
+SOC 2 costs breakdown:
+
+```mermaid
+graph LR
+    subgraph Costs["SOC 2 Costs"]
+        A[Audit: $20-75K]
+        B[Platform: $15-40K/yr]
+        C[Personnel: 25-50% FTE]
+        D[Infrastructure: $5-20K/yr]
+    end
+
+    A --> E[Total Year 1: $60-150K]
+    B --> E
+    C --> E
+    D --> E
+```
 
 1. **Gap Assessment (2-4 weeks):** Evaluate your current state against SOC 2 requirements. Identify what's missing.
 
@@ -160,7 +254,22 @@ Smaller scope = faster audit = lower cost.
 
 ## Common Mistakes
 
-[Image: Warning symbols with common SOC 2 pitfalls]
+Common SOC 2 mistakes:
+
+```mermaid
+graph TD
+    A[Common Mistakes] --> B[Waiting until you lose a deal]
+    A --> C[Trying to do it alone]
+    A --> D[Ignoring it in product design]
+    A --> E[Over-scoping the audit]
+    A --> F[Treating it as one-time]
+
+    B --> G[12+ months behind]
+    C --> H[Wasted time and risk]
+    D --> I[Expensive retrofits]
+    E --> J[Unnecessary complexity]
+    F --> K[Annual surprises]
+```
 
 **Waiting until you lose a deal.** SOC 2 takes 12+ months. If you wait until you need it, you're a year behind.
 
