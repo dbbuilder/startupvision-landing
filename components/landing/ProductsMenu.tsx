@@ -64,14 +64,14 @@ export function ProductsMenu() {
           viewport={{ once: true }}
         >
           <p className="text-sm font-medium tracking-widest text-violet-600 dark:text-violet-400 uppercase mb-4">
-            Products
+            Platform Track
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-zinc-900 dark:text-white leading-tight max-w-3xl">
-            The startup journey,{" "}
-            <span className="font-semibold">productized</span>
+            Use our tools,{" "}
+            <span className="font-semibold">we guide you</span>
           </h2>
           <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
-            Clear deliverables at every stage. Start anywhere, progress at your pace.
+            AI-powered development tools with expert guidance at every stage. You stay in control while we accelerate your journey.
           </p>
         </motion.div>
 

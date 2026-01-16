@@ -46,19 +46,19 @@ export function ConsultingServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-medium tracking-widest text-violet-600 dark:text-violet-400 uppercase mb-4">
-            Services
+          <p className="text-sm font-medium tracking-widest text-blue-600 dark:text-blue-400 uppercase mb-4">
+            Partnership Track
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <h2 className="text-4xl md:text-5xl font-light text-zinc-900 dark:text-white leading-tight max-w-2xl">
-              Comprehensive technology services for{" "}
-              <span className="font-semibold">ambitious startups</span>
+              Our team builds,{" "}
+              <span className="font-semibold">AI amplifies</span>
             </h2>
             <Link
               href="#contact"
-              className="inline-flex items-center text-zinc-900 dark:text-white font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors group whitespace-nowrap"
+              className="inline-flex items-center text-zinc-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors group whitespace-nowrap"
             >
-              View all capabilities
+              Discuss your project
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -85,7 +85,7 @@ export function ConsultingServices() {
 
                 {/* Title */}
                 <div className="lg:col-span-3">
-                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {service.title}
                   </h3>
                 </div>
