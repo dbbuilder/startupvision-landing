@@ -24,6 +24,8 @@ const products = [
     icon: Rocket,
     timeline: "6-8 Weeks",
     color: "bg-blue-600",
+    href: "https://mvpcreator.startupvision.net",
+    cta: "Build your MVP",
   },
   {
     id: "product",
