@@ -19,8 +19,9 @@ const tracks = [
       "Your team stays in the driver's seat",
       "Faster iteration, lower cost",
     ],
-    cta: "Explore Platform",
-    href: "#products",
+    cta: "Try the Platform",
+    href: "https://prototyper.startupvision.net",
+    external: true,
     accentColor: "violet",
   },
   {
@@ -39,6 +40,7 @@ const tracks = [
     ],
     cta: "Explore Partnership",
     href: "#services",
+    external: false,
     accentColor: "blue",
   },
 ];
@@ -142,17 +144,33 @@ export function TwoTracks() {
                   </ul>
 
                   {/* CTA */}
-                  <Link
-                    href={track.href}
-                    className={`inline-flex items-center font-medium transition-colors group/link ${
-                      isViolet
-                        ? "text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300"
-                        : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
-                    }`}
-                  >
-                    {track.cta}
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  {track.external ? (
+                    <a
+                      href={track.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center font-medium transition-colors group/link ${
+                        isViolet
+                          ? "text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300"
+                          : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                      }`}
+                    >
+                      {track.cta}
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={track.href}
+                      className={`inline-flex items-center font-medium transition-colors group/link ${
+                        isViolet
+                          ? "text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300"
+                          : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                      }`}
+                    >
+                      {track.cta}
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             );

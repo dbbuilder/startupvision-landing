@@ -13,6 +13,8 @@ const products = [
     icon: Lightbulb,
     timeline: "Minutes",
     color: "bg-violet-600",
+    href: "https://prototyper.startupvision.net",
+    cta: "Try it free",
   },
   {
     id: "mvp",
@@ -120,9 +122,20 @@ export function ProductsMenu() {
                   <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-3">
                     {product.subtitle}
                   </p>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-500">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-500 mb-4">
                     {product.description}
                   </p>
+                  {product.href && (
+                    <a
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
+                    >
+                      {product.cta}
+                      <ArrowRight className="ml-1 w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             );
@@ -131,16 +144,25 @@ export function ProductsMenu() {
 
         {/* CTA */}
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
+          <a
+            href="https://prototyper.startupvision.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 bg-violet-600 text-white font-medium rounded hover:bg-violet-700 transition-colors group"
+          >
+            Start Building Now
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
           <Link
             href="#contact"
             className="inline-flex items-center text-zinc-900 dark:text-white font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors group"
           >
-            Discuss your product needs
+            Or discuss your needs
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
