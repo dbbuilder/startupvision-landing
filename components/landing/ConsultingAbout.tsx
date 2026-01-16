@@ -59,10 +59,10 @@ export function ConsultingAbout() {
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-light mb-2">Compliance-First</p>
+                <p className="text-3xl font-light mb-2">Deep Compliance Expertise</p>
                 <p className="text-zinc-500">
-                  WCAG, SOC2, GDPR, HIPAA expertise built into every engagement.
-                  Enterprise-grade standards from day one.
+                  SOC 2, HIPAA, PCI, FERPA, and California privacy regulations.
+                  Enterprise-grade compliance built in from day one.
                 </p>
               </div>
               <div>

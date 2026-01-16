@@ -55,18 +55,22 @@ export function ConsultingHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="space-y-12">
-              <div className="border-l-2 border-zinc-200 dark:border-zinc-800 pl-8">
+            <div className="space-y-10">
+              <div className="border-l-2 border-violet-600 pl-8">
+                <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">50+</p>
+                <p className="text-zinc-600 dark:text-zinc-400">AI-driven SaaS products built</p>
+              </div>
+              <div className="border-l-2 border-blue-600 pl-8">
+                <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">180+</p>
+                <p className="text-zinc-600 dark:text-zinc-400">MVPs created and launched</p>
+              </div>
+              <div className="border-l-2 border-emerald-600 pl-8">
+                <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">30</p>
+                <p className="text-zinc-600 dark:text-zinc-400">Custom AI agents for development acceleration</p>
+              </div>
+              <div className="border-l-2 border-amber-600 pl-8">
                 <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">20+</p>
                 <p className="text-zinc-600 dark:text-zinc-400">Years average experience per team member</p>
-              </div>
-              <div className="border-l-2 border-zinc-200 dark:border-zinc-800 pl-8">
-                <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">100%</p>
-                <p className="text-zinc-600 dark:text-zinc-400">US-based senior engineers and designers</p>
-              </div>
-              <div className="border-l-2 border-zinc-200 dark:border-zinc-800 pl-8">
-                <p className="text-5xl font-light text-zinc-900 dark:text-white mb-2">Exit</p>
-                <p className="text-zinc-600 dark:text-zinc-400">Founders with SaaS acquisition experience</p>
               </div>
             </div>
           </motion.div>
