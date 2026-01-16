@@ -1,9 +1,12 @@
 export { Hero } from "./Hero";
+export { BentoHero } from "./BentoHero";
 export { JourneyTimeline } from "./JourneyTimeline";
 export { EntryPoints } from "./EntryPoints";
 export { HumanPlusAI } from "./HumanPlusAI";
 export { ServicesGrid } from "./ServicesGrid";
+export { BentoServices } from "./BentoServices";
 export { About } from "./About";
+export { BentoAbout } from "./BentoAbout";
 export { ContactForm } from "./ContactForm";
 export { Navbar } from "./Navbar";
 export { Footer } from "./Footer";

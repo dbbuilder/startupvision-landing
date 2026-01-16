@@ -1,24 +1,22 @@
-import { Hero } from "@/components/landing/Hero";
+import { BentoHero } from "@/components/landing/BentoHero";
 import { JourneyTimeline } from "@/components/landing/JourneyTimeline";
 import { EntryPoints } from "@/components/landing/EntryPoints";
 import { HumanPlusAI } from "@/components/landing/HumanPlusAI";
-import { About } from "@/components/landing/About";
-import { ServicesGrid } from "@/components/landing/ServicesGrid";
+import { BentoAbout } from "@/components/landing/BentoAbout";
+import { BentoServices } from "@/components/landing/BentoServices";
 import { ContactForm } from "@/components/landing/ContactForm";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <BentoHero />
       <div id="journey">
         <JourneyTimeline />
       </div>
       <EntryPoints />
       <HumanPlusAI />
-      <About />
-      <div id="services">
-        <ServicesGrid />
-      </div>
+      <BentoAbout />
+      <BentoServices />
       <ContactForm />
     </>
   );
