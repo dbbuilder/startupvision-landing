@@ -8,39 +8,52 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "StartupVision | From Idea to Enterprise",
+  title: {
+    default: "StartupVision | From Idea to Enterprise",
+    template: "%s | StartupVision",
+  },
   description:
-    "Full-service product development from prototype to enterprise scale. Human-powered, AI-accelerated. Start at any stage of your product journey.",
+    "AI tools and fractional executive leadership for founders. Magic Studio, MVP Creator, fractional CTO/CAIO/CISO/CEO — built on 25 years of regulated-industry delivery.",
   keywords: [
+    "fractional CTO",
+    "fractional executive",
+    "startup AI tools",
+    "MVP development",
+    "founder tools",
+    "startup accelerator",
+    "AI marketing tools",
     "product development",
-    "startup",
-    "MVP",
-    "app development",
-    "prototype",
-    "enterprise",
-    "software agency",
+    "zero to one startup",
   ],
   authors: [{ name: "StartupVision" }],
+  metadataBase: new URL("https://startupvision.net"),
+  alternates: { canonical: "https://startupvision.net" },
   openGraph: {
-    title: "StartupVision | From Idea to Enterprise",
+    title: "StartupVision | Senior Execution. Founder Economics.",
     description:
-      "Full-service product development from prototype to enterprise scale. Human-powered, AI-accelerated.",
+      "AI tools and fractional executive leadership for founders. Magic Studio, MVP Creator, fractional CTO/CAIO/CISO/CEO — available at 10–40 hrs/week.",
     type: "website",
     url: "https://startupvision.net",
+    siteName: "StartupVision",
+    locale: "en_US",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "StartupVision — Senior Execution. Founder Economics." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "StartupVision | From Idea to Enterprise",
+    title: "StartupVision | Senior Execution. Founder Economics.",
     description:
-      "Full-service product development from prototype to enterprise scale. Human-powered, AI-accelerated.",
+      "AI tools and fractional CTO/CAIO/CISO/CEO for founders — available at 10–40 hrs/week without the full-time cost.",
+    images: ["/og-image.png"],
   },
 };
 
