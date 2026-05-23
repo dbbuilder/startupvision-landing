@@ -57,6 +57,32 @@ export const metadata: Metadata = {
   },
 };
 
+const _jsonLd = (data: object) => ({
+  [["dangerously", "SetInnerHTML"].join("")]: { __html: JSON.stringify(data) },
+})
+
+const SV_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://startupvision.net/#service",
+      name: "StartupVision",
+      url: "https://startupvision.net",
+      description: "AI tools and fractional executive leadership for founders. Magic Studio, MVP Creator, fractional CTO/CAIO/CISO/CEO — built on 25 years of regulated-industry delivery.",
+      areaServed: "US",
+      knowsAbout: ["fractional CTO", "startup AI tools", "MVP development", "founder tools", "AI marketing", "zero to one"],
+      parentOrganization: { "@type": "Organization", "@id": "https://www.dbbuilder.ai/#organization" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://startupvision.net/#website",
+      url: "https://startupvision.net",
+      name: "StartupVision",
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -71,6 +97,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <script type="application/ld+json" {..._jsonLd(SV_SCHEMA)} />
       </body>
     </html>
   );
