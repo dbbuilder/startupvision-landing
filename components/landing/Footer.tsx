@@ -11,10 +11,12 @@ const footerLinks = {
     { label: "Compliance", href: "/services/compliance" },
     { label: "Enterprise", href: "/services/enterprise" },
   ],
-  migrations: [
-    { label: "From WordPress", href: "/migrations/wordpress" },
-    { label: "From Lovable", href: "/migrations/lovable" },
-    { label: "Existing App", href: "/migrations/existing-app" },
+  constellation: [
+    { label: "DBBuilder (parent)", href: "https://dbbuilder.ai" },
+    { label: "SchoolVision", href: "https://schoolvision.ai" },
+    { label: "ServiceVision", href: "https://servicevisionai.com" },
+    { label: "MobileID.ai", href: "https://mobileid.ai" },
+    { label: "Portfolio", href: "https://portfolio.servicevision.io" },
   ],
   company: [
     { label: "About", href: "/about" },
@@ -36,9 +38,20 @@ export function Footer() {
               </div>
               <span className="text-xl font-bold">StartupVision</span>
             </Link>
-            <p className="text-zinc-400 text-sm">
+            <p className="text-zinc-400 text-sm mb-3">
               From idea to enterprise. Human-powered, AI-accelerated product
               development.
+            </p>
+            <p className="text-zinc-500 text-xs">
+              A division of the DBBuilder constellation by Vision Companies.
+              One of four stars, built on the{" "}
+              <a
+                href="https://visiondataplatform.com"
+                className="text-zinc-300 hover:text-white underline underline-offset-2"
+              >
+                Vision Data Platform
+              </a>
+              {" "}— 25 years of regulated-industry delivery, Est. 2001.
             </p>
           </div>
 
@@ -59,18 +72,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Migrations */}
+          {/* Constellation */}
           <div>
-            <h4 className="font-semibold mb-4">Migrations</h4>
+            <h4 className="font-semibold mb-4">Constellation</h4>
             <ul className="space-y-2">
-              {footerLinks.migrations.map((link) => (
+              {footerLinks.constellation.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-zinc-400 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
